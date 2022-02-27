@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/destination_home">
+
+    <fragment
+        android:id="@+id/destination_home"
+        android:name="ivse.dev.myheroapp.ui.home.HomeNavigation"
+        android:label="@string/super_heros_text"
+        tools:layout="@layout/fragment_home_navigation">
+        <action
+            android:id="@+id/go_to_details"
+            app:destination="@id/destination_hero_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_hero_details"
+        android:name="ivse.dev.myheroapp.ui.herodetails.HeroDetails"
+        android:label="@string/hero_details_text"
+        tools:layout="@layout/fragment_hero_details" >
+        <action
+            android:id="@+id/return_to_home"
+            app:destination="@id/destination_home"
+            app:popUpTo="@id/destination_home"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+</navigation>

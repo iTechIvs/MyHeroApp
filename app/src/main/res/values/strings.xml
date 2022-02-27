@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Hero App</string>
+    
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="super_heros_text">Super heroes</string>
+    <string name="hero_details_text">Detalles</string>
+    <string name="there_is_something_wrong">Algo salío mal</string>
+    <string name="retry">Reintentar</string>
+    <string name="name_text">Nombre</string>
+    <string name="description_text">Descripción</string>
+    <string name="comics_appeareance">Comic´s en los que aparece</string>
+</resources>
