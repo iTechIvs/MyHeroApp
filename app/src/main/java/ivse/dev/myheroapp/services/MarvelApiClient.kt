@@ -7,7 +7,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MarvelApiClient {
-
     @GET("v1/public/characters")
     suspend fun getCharactersNameStartWith(
         @Query("limit") limit: Int,

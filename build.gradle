@@ -7,9 +7,11 @@ buildscript{
     ext.navigationVersion = "2.3.5"
     ext.modelVersion = "2.4.0"
     ext.loopingLayoutVersion = "0.4.1"
+    ext.daggerHiltVersion = "2.28-alpha"
 
     dependencies{
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$daggerHiltVersion"
     }
 }
 

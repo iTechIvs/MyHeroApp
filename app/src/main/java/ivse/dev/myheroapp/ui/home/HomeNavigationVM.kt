@@ -7,9 +7,13 @@ import ivse.dev.myheroapp.domain.GetCharactersNameStartWith
 import ivse.dev.myheroapp.model.CharacterDataWrapper
 import ivse.dev.myheroapp.model.MarvelCharacter
 import kotlinx.coroutines.launch
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class HomeNavigationVM() : ViewModel() {
-    private var getCharactersNameStartWith = GetCharactersNameStartWith()
+@HiltViewModel
+class HomeNavigationVM
+@Inject constructor(private val getCharactersNameStartWith: GetCharactersNameStartWith) : ViewModel() {
+
     var liveDataCharacters = MutableLiveData<List<MarvelCharacter>>()
     var loading = MutableLiveData<Boolean>(true)
 

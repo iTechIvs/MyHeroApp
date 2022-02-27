@@ -3,30 +3,27 @@ package ivse.dev.myheroapp.services
 import ivse.dev.myheroapp.model.CharacterDataWrapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class MarvelService() {
-    private val retrofit = RetrofitHelper.getRetrofit()
+class MarvelService @Inject constructor(var api: MarvelApiClient) {
 
     suspend fun getCharactersNameStartWith(limit: Int, nameStartsWith: String):CharacterDataWrapper{
         return withContext(Dispatchers.IO){
-            val response = retrofit.create(MarvelApiClient::class.java)
-                .getCharactersNameStartWith(limit, 0, nameStartsWith)
+            val response = api.getCharactersNameStartWith(limit, 0, nameStartsWith)
             response.body()!!
         }
     }
 
     suspend fun getCharacterByName(name: String): CharacterDataWrapper{
         return withContext(Dispatchers.IO){
-            val response = retrofit.create(MarvelApiClient::class.java)
-                .getCharacterByName(name)
+            val response = api.getCharacterByName(name)
             response.body()!!
         }
     }
 
     suspend fun getCharacterById(characterId: Int): CharacterDataWrapper{
         return withContext(Dispatchers.IO){
-            val response = retrofit.create(MarvelApiClient::class.java)
-                .getCharacterById(characterId)
+            val response = api.getCharacterById(characterId)
             response.body()!!
         }
     }

@@ -3,13 +3,16 @@ package ivse.dev.myheroapp.ui.herodetails
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import ivse.dev.myheroapp.domain.GetCharacterByName
 import ivse.dev.myheroapp.model.CharacterDataWrapper
 import ivse.dev.myheroapp.model.MarvelCharacter
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HeroDetailsVM(): ViewModel() {
-    private var getCharacterByName = GetCharacterByName()
+@HiltViewModel
+class HeroDetailsVM
+@Inject constructor(private var getCharacterByName: GetCharacterByName): ViewModel() {
     var marvelCharacter = MutableLiveData<MarvelCharacter>()
     var loading = MutableLiveData<Boolean>(true)
     var returnForEmpty = MutableLiveData<Boolean>(false)

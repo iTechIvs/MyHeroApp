@@ -2,9 +2,10 @@ package ivse.dev.myheroapp.repository
 
 import ivse.dev.myheroapp.model.CharacterDataWrapper
 import ivse.dev.myheroapp.services.MarvelService
+import javax.inject.Inject
 
-class MarvelRepository {
-    private val api = MarvelService()
+class MarvelRepository @Inject constructor(private val api: MarvelService){
+
     suspend fun getAllCharacters(limit: Int, nameStartsWith: String): CharacterDataWrapper {
         //Aqui se deberian de guardar los datos en una BD
         return api.getCharactersNameStartWith(limit, nameStartsWith)

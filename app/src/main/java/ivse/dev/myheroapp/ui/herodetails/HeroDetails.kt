@@ -9,10 +9,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import dagger.hilt.android.AndroidEntryPoint
 import ivse.dev.myheroapp.R
 import ivse.dev.myheroapp.databinding.FragmentHeroDetailsBinding
 import ivse.dev.myheroapp.ui.home.HomeNavigationVM
-
+@AndroidEntryPoint
 class HeroDetails : Fragment() {
     private var _binding: FragmentHeroDetailsBinding? = null
     private val binding get() = _binding!!
